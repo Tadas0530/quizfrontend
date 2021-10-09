@@ -4,6 +4,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "strictPropertyInitialization": false,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitReturns": true,
@@ -16,6 +17,8 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",
+    "suppressImplicitAnyIndexErrors": true,
+
     "lib": [
       "es2018",
       "dom"

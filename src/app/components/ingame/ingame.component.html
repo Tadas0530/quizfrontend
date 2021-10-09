@@ -1,0 +1,97 @@
+<div class="container-fluid">
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col-sm-2">
+        <h3>{{ currentQuestionNumber }}/10</h3>
+      </div>
+      <div class="col-sm-8 text-center">
+        <img
+          class="text-center in-game-picture"
+          src="{{ currentQuestion.questionPicture }}"
+        />
+      </div>
+      <div class="col-sm-2">
+            TIME FOR POINTS LEFT: {{subscribeTimer}}<br><br>
+            POINTS EARNED: {{ points }}
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8 text-center">
+        <p>{{ currentQuestion.description }}</p>
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8 text-center">
+        <button
+          [ngStyle]="{
+            'background-color':
+              hasAnswered === false
+                ? 'lightblue'
+                : currentQuestion.answers[0].isCorrect === true
+                ? 'green'
+                : 'red'
+          }"
+          [disabled]="hasAnswered"
+          (click)="checkIfAnswerIsCorrect(currentQuestion.answers[0].isCorrect); stopTheTimer()"
+          class="option-box m-2"
+        >
+          {{ currentQuestion.answers[0].description }}
+        </button>
+        <button
+          [ngStyle]="{
+            'background-color':
+              hasAnswered === false
+                ? 'lightblue'
+                : currentQuestion.answers[1].isCorrect === true
+                ? 'green'
+                : 'red'
+          }"
+          [disabled]="hasAnswered"
+          (click)="checkIfAnswerIsCorrect(currentQuestion.answers[1].isCorrect); stopTheTimer()"
+          class="option-box m-2"
+        >
+          {{ currentQuestion.answers[1].description }}
+        </button>
+        <button
+          [ngStyle]="{
+            'background-color':
+              hasAnswered === false
+                ? 'lightblue'
+                : currentQuestion.answers[2].isCorrect === true
+                ? 'green'
+                : 'red'
+          }"
+          [disabled]="hasAnswered"
+          (click)="checkIfAnswerIsCorrect(currentQuestion.answers[2].isCorrect); stopTheTimer()"
+          class="option-box m-2"
+        >
+          {{ currentQuestion.answers[2].description }}
+        </button>
+        <button
+          [ngStyle]="{
+            'background-color':
+              hasAnswered === false
+                ? 'lightblue'
+                : currentQuestion.answers[3].isCorrect === true
+                ? 'green'
+                : 'red'
+          }"
+          [disabled]="hasAnswered"
+          (click)="checkIfAnswerIsCorrect(currentQuestion.answers[3].isCorrect); stopTheTimer()"
+          class="option-box m-2"
+        >
+          {{ currentQuestion.answers[3].description }}
+        </button>
+
+        <button (click)="loadQuestion()" *ngIf="hasAnswered && currentQuestionNumber !== 10" class="option-box">
+          Next
+        </button>
+        <button class="option-box" *ngIf="hasAnswered && currentQuestionNumber === 10">Finish</button>
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+  </div>
+</div>

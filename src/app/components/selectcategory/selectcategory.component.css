@@ -1,0 +1,25 @@
+.category-box {
+    background-color: lightblue;
+    min-width: 150px;
+    min-height: 50px;
+    border: none;
+    margin: 10px;
+}
+
+.category-box:hover {
+    background-color: red;
+}
+
+.return-button {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.width-sm {
+    width: 70%;
+}
+
+.category-pic {
+    width: 40px;
+}

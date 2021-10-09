@@ -1,0 +1,27 @@
+.welcome-color {
+    color: red;
+}
+
+.container-buttons {
+    width: 50%;
+    margin: auto;
+}
+
+div[class*='col-sm-6'] {
+    margin-top: 10px;
+}
+
+
+
+.button-welcome {
+    background-color: lightblue;
+    border: none;
+    float: left;
+    min-width: 150px;
+    min-height: 50px;
+    margin: auto !important;
+}
+
+.button-welcome:hover {
+    background-color: red;
+}

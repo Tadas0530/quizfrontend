@@ -1,0 +1,16 @@
+<div class="container-fluid mt-3">
+    <h2 class="text-center">Select a category</h2>
+    <div class="container width-sm mt-5">
+    <div class="row">
+      <div *ngFor="let category of categories" class="col-sm-4">
+        <button routerLink="/in-game/{{ category.id }}" class="category-box">
+          <div>
+            <img class="category-pic" src="{{ category.categoryPicture }}"/>
+            {{ category.categoryName }}
+          </div>
+        </button>
+      </div>
+    </div>
+</div>
+<button routerLink="/home" class="return-button category-box">Go back</button>
+</div>

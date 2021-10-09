@@ -1,0 +1,16 @@
+.in-game-picture {
+    width: 80%;
+    margin: auto;
+}
+
+.option-box {
+    background-color: lightblue;
+    min-width: 45%;
+    min-height: 50px;
+    border: none;
+    margin: 10px;
+}
+
+.option-box:hover {
+    background-color: red;
+}
